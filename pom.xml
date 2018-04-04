@@ -16,6 +16,113 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>payzap</finalName>
+  <plugins>
+  <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-antrun-plugin</artifactId>
+		<version>1.1</version>
+		
+		         <executions>
+			
+					<execution>
+							<phase>validate</phase>
+							<id>validate</id>
+								<goals>
+									<goal>run</goal>
+								</goals>
+									<configuration>
+											<tasks>
+												<echo>====================>>>>>>>>>>validate phase</echo>
+											</tasks>
+									</configuration>
+					</execution>
+					
+					
+					
+					<execution>
+							<phase>compile</phase>
+							<id>compile</id>
+								<goals>
+									<goal>run</goal>
+								</goals>
+									<configuration>
+											<tasks>
+												<echo>==================>>>>>>>>>>>compile  phase</echo>
+											</tasks>
+									</configuration>
+					</execution>
+					
+					
+					<execution>
+							<phase>test</phase>
+							<id>test</id>
+								<goals>
+									<goal>run</goal>
+								</goals>
+									<configuration>
+											<tasks>
+												<echo>==========================>>>>>>>>>>>test phase</echo>
+											</tasks>
+									</configuration>
+					</execution>
+					
+					
+					<execution>
+							<phase>package</phase>
+							<id>package</id>
+									<goals>
+										<goal>run</goal>
+									</goals>
+											<configuration>
+													<tasks>
+														<echo>===================>>>>>>>>>>>>> package  phase</echo>
+													</tasks>
+											</configuration>
+					</execution>
+					
+					
+					<execution>
+							<phase>deploy</phase>
+							<id>deploy</id>
+									<goals>
+										<goal>run</goal>
+									</goals>
+										<configuration>
+												<tasks>
+													<echo>======================>>>>>>>>>>>>>>deploy  phase</echo>
+												</tasks>
+										</configuration>
+					</execution>
+					
+					
+	       </executions>
+	</plugin>
+	
+	<plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <version>2.7</version>
+			<configuration>
+				<formats>
+					<format>xml</format>
+				</formats>
+				<aggregate>true</aggregate>
+			</configuration>
+	</plugin>
+
+	<plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <version>2.7</version>
+			<configuration>
+				<formats>
+					<format>xml</format>
+				</formats>
+				<aggregate>true</aggregate>
+			</configuration>
+	</plugin>
+
+  </plugins>  
+	<finalName>payzap</finalName>
   </build>
 </project>
